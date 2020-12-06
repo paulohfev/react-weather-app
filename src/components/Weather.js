@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import WeatherDetail from './WeatherDetail';
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState([]);
-  const [term, setTerm] = useState('London');
+  const [weatherData, setWeatherData] = useState({ });
+  const [term, setTerm] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const onFormSubmit = event => {
     event.preventDefault();
@@ -20,27 +22,23 @@ const Weather = () => {
         units: 'imperial',
         appid: KEY
       }
-    }).then((response) => {
+    }).then(response => {
       setWeatherData(response.data);
+      setLoading(false);
     })
   };
 
-  console.log(weatherData)
+  // console.log(weatherData)
 
   return (
     <div>
       <label>Enter your city</label>
       <form onSubmit={onFormSubmit}>
         <input type="text" value={term} onChange={event => setTerm(event.target.value)} />
-        <button>Click</button>
+        <button>Search</button>
       </form>
 
-      <h2>{weatherData.name}</h2>
-      <ul>
-        {/* <li>Main temperature: {weatherData.main.temp} ºF</li>
-        <li>Max temperature: {weatherData.main.temp_max} ºF</li>
-        <li>Min temperature: {weatherData.main.temp_min} ºF</li> */}
-      </ul>
+      {loading ? <div>Loading...</div> : <WeatherDetail weatherData={weatherData} /> }
     </div>
   );
 };
