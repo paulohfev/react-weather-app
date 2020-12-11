@@ -1,0 +1,43 @@
+.background {
+  height: 100vh;
+  padding: 1rem;
+
+  .detail-city-title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .detail-container {
+    display: flex;
+    justify-content: center;
+
+    .detail-container-block {
+      background-color: #FFFFFF;
+      border: 1px solid silver;
+      border-radius: 0.625rem;
+      height: 15rem;
+      padding: 1rem;
+      width: 15rem;
+
+      &:first-of-type {
+        margin-right: 1rem;
+      }
+
+      .detail-icon {
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(146, 158, 160, 0.16);
+      }
+
+      .detail-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0.5rem 0 0.5rem;
+        }
+      }
+    }
+  }
+}
