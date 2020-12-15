@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import getWeatherData from '../api/openWeatherMap';
+import getWeatherData from '../../../api/openWeatherMap';
 
 const WeatherForm = ({ setWeatherData, setLoading }) => {
   const [term, setTerm] = useState('');
@@ -17,7 +17,7 @@ const WeatherForm = ({ setWeatherData, setLoading }) => {
         <button>Search</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default WeatherForm;

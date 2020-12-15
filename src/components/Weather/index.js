@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import WeatherDetail from './WeatherDetail';
-import WeatherForm from './WeatherForm';
+import WeatherDetail from './WeatherDetail/index';
+import WeatherForm from './WeatherForm/index';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState({ });
